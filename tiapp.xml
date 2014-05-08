@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+  <id>me.yurasov.sfsampleapp</id>
+  <name>SF Example</name>
+  <version>1.0</version>
+  <publisher>Mikhail Yurasov</publisher>
+  <url>http://</url>
+  <description>Salesforce REST API example</description>
+  <copyright>2014 by Mikhail Yurasov</copyright>
+  <icon>appicon.png</icon>
+  <fullscreen>false</fullscreen>
+  <navbar-hidden>false</navbar-hidden>
+  <analytics>true</analytics>
+  <guid>f04d8a99-dd3c-4f4d-bee2-55a0d00d49fa</guid>
+  <property name="ti.ui.defaultunit" type="string">dp</property>
+  <ios>
+    <plist>
+      <dict>
+        <key>UISupportedInterfaceOrientations~iphone</key>
+        <array>
+          <string>UIInterfaceOrientationPortrait</string>
+        </array>
+        <key>UISupportedInterfaceOrientations~ipad</key>
+        <array>
+          <string>UIInterfaceOrientationPortrait</string>
+          <string>UIInterfaceOrientationPortraitUpsideDown</string>
+          <string>UIInterfaceOrientationLandscapeLeft</string>
+          <string>UIInterfaceOrientationLandscapeRight</string>
+        </array>
+        <key>UIRequiresPersistentWiFi</key>
+        <false/>
+        <key>UIPrerenderedIcon</key>
+        <false/>
+        <key>UIStatusBarHidden</key>
+        <false/>
+        <key>UIStatusBarStyle</key>
+        <string>UIStatusBarStyleDefault</string>
+
+        <key>CFBundleURLTypes</key>
+        <array>
+          <dict>
+            <key>CFBundleURLName</key>
+            <string>me.yurasov.sfsampleapp</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+              <string>Sfsampleapp</string>
+            </array>
+          </dict>
+        </array>
+
+      </dict>
+    </plist>
+  </ios>
+  <modules>
+  </modules>
+  <deployment-targets>
+    <target device="android">false</target>
+    <target device="blackberry">false</target>
+    <target device="ipad">false</target>
+    <target device="iphone">true</target>
+    <target device="mobileweb">false</target>
+    <target device="tizen">false</target>
+  </deployment-targets>
+  <sdk-version>3.2.3.GA</sdk-version>
+
+  <property name="salesforce_client_id" type="string">
+    --you-cliend-id-here--
+  </property>
+</ti:app>
