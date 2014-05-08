@@ -78,7 +78,7 @@ Meaning of some of the params:
 
 You may have noticed we're using custom URL scheme for the callback. Our app is registered in the system as the one that opens this type of URLs so we get a callback when user is done with the login process on the Salesforce web site. This is achieved by adding the following lines our app __tiapp.xml__ file[^1]:
 
-```
+```xml
 <ios>
   <plist>
     <dict>
@@ -110,7 +110,7 @@ Now let's see what's happening when the user presses "Enable tracking" switch:
 
 When location tracking is requested the first thing app checks is whether we have access token:
 
-```
+```js
 ...
 if (e.value) {
 
@@ -134,7 +134,7 @@ If there is no valid authentication data the user is directed to Salesforce logi
 
 Otherwise it proceeds to `createPositionObject()` which calls __POST__ HTTP method on a _Positions_ collection to create a new resource in it. The response contains newly created object id which is then saved to `Ti.App.positionObjectId`:
 
-```
+```js
 // create position resource
 function createPositionObject() {
   
@@ -168,7 +168,7 @@ In case our token is no longer valid we get `HTTP 401 Unauthorized` response and
 
 When we get a location update we want to save to the server. This is achieved by calling __PATCH__ HTTP method on our _Position_ resource:
 
-```
+```js
 function onLocation(e) {
 
   // get coordinates
@@ -200,7 +200,7 @@ function onLocation(e) {
 
 Finally to get our data from the server we call __GET__ HTTP method on a _Position_ resource:
 
-```
+```js
 function update() {
   if (Ti.App.positionObjectId) {
 
