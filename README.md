@@ -4,6 +4,8 @@ Appcelerator Titanium is increasingly popular tool for developing cross-platform
 
 REST APIs are accessible form any environment that can send an HTTP request. In many ways it's the most flexible way to communicate to Salesforce platform and gives you the ability to fully control your data flow.
 
+In this tutorial we're going to build a Titanium app which lets you track and view your location history using Salesforce REST API.
+
 Source code of the sample app can be found here: [https://github.com/myurasov/Salesforce-REST-API-Titanium-Sample](https://github.com/myurasov/Salesforce-REST-API-Titanium-Sample). You can import it to Titanium Studio via _File > Import > Existing mobile project_.
 
 >
