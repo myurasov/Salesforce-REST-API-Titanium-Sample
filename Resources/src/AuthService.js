@@ -21,9 +21,7 @@ module.exports = {
     Ti.Platform.openURL('https://login.salesforce.com/services/oauth2/authorize' +
       '?response_type=token&display=touch' +
       '&redirect_uri=sfsampleapp://oauth-callback' +
-      '&client_id=' + Ti.App.Properties.getString('salesforce_client_id'),
-      '_system',
-      'location=yes');
+      '&client_id=' + Ti.App.Properties.getString('salesforce_client_id'));
   }
 
 }
