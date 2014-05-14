@@ -22,7 +22,6 @@ module.exports.createHistoryPage = function () {
       var authData = Auth.get();
 
       var xhr = Ti.Network.createHTTPClient();
-      1
 
       xhr.onload = function (e) {
 
