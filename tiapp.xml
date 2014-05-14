@@ -66,4 +66,9 @@
   <property name="salesforce_client_id" type="string">
     --you-cliend-id-here--
   </property>
+  
+  <modules>
+    <module platform="iphone">ti.map</module>
+    <module platform="android">ti.map</module>
+  </modules>
 </ti:app>

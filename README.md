@@ -8,6 +8,7 @@ In this tutorial we're going to build a Titanium app which lets you track and vi
 
 Source code of the sample app can be found here: [https://github.com/myurasov/Salesforce-REST-API-Titanium-Sample](https://github.com/myurasov/Salesforce-REST-API-Titanium-Sample). You can import it to Titanium Studio via _File > Import > Existing mobile project_.
 
+You will also need Ti.Map module installed. Download it from [https://marketplace.appcelerator.com/apps/5005](https://marketplace.appcelerator.com/apps/5005) and install using Titanium Studio menu _Help > Install Mobile Module_.
 >
 * Creating Salesforce Connected App
 * Adding custom SObject
@@ -174,8 +175,8 @@ When we get a location update we want to save to the server. This is achieved by
 function onLocation(e) {
 
   // get coordinates
-  var lat = Math.round(e.coords.latitude * 1000) / 1000;
-  var lon = Math.round(e.coords.longitude * 1000) / 1000;
+  var lat = e.coords.latitude;
+  var lon = e.coords.longitude;
 
   positionList.unshift([lat, lon]);
 
@@ -194,7 +195,6 @@ function onLocation(e) {
   xhr.setRequestHeader('Authorization', authData.token_type + ' ' + authData.access_token);
   xhr.setRequestHeader('Content-type', 'application/json');
   xhr.send(JSON.stringify({'Data__c': JSON.stringify(positionList)}));
-  
 }
 ```
 
@@ -208,24 +208,10 @@ function update() {
 
     var authData = Auth.get();
 
-    var xhr = Ti.Network.createHTTPClient();1
+    var xhr = Ti.Network.createHTTPClient();
 
     xhr.onload = function (e) {
-
-      var data = JSON.parse(e.source.responseText).Data__c;
-      data = JSON.parse(data);
-
-      if (data) {
-
-        for (var i = 0; i < data.length; i++) {
-          data[i] = {
-            title: data[i][0] + ', ' + data[i][1]
-          }
-        }
-
-        // display data
-        tableView.setData(data);
-      }
+      ... display route on a map ...    
     }
 
     // get position list
@@ -237,7 +223,7 @@ function update() {
 }
 ```
 
-When the data is loaded we map it to set of rows and display:
+When the data is loaded we display the route on a map:
 
 ![image](app-history.png)
 
@@ -247,7 +233,7 @@ Using Salesforce REST APIs along with OAuth authentication is flexible and can b
 
 ## About the Author
 
-I am a full-stack _mobile/web/connected devices_ developer specializing in bringing projects from the idea to full implementation. Feel free to contact me at <me@yurasov.me> for any comments and questions or visit my:
+Mikhail Yurasov is a full-stack _mobile/web/connected devices_ developer specializing in bringing projects from the idea to full implementation. Feel free to contact him at <me@yurasov.me> for any comments and questions or visit his:
 
 - [LinkedIn](https://www.linkedin.com/profile/view?id=173007295)
 - [GitHub](https://github.com/myurasov)

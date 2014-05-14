@@ -44,8 +44,8 @@ module.exports.createTrackPage = function () {
   function onLocation(e) {
 
     // get coordinates
-    var lat = Math.round(e.coords.latitude * 1000) / 1000;
-    var lon = Math.round(e.coords.longitude * 1000) / 1000;
+    var lat = e.coords.latitude;
+    var lon = e.coords.longitude;
 
     positionList.unshift([lat, lon]);
 
